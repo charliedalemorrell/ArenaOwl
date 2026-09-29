@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "ArenaOwl",
+  "version": "1.2.0",
+  "description": "Watch up to 4 streams at once: tiles your streaming sites into windows on one monitor, with one-click sound switching.",
+  "permissions": ["storage", "system.display", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "ArenaOwl",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.espn.com/*",
+        "*://*.foxone.com/*",
+        "*://*.fox.com/*",
+        "*://*.paramountplus.com/*",
+        "*://*.cbs.com/*",
+        "*://*.netflix.com/*",
+        "*://*.peacocktv.com/*",
+        "*://*.youtube.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hulu.com/*",
+        "*://*.tubitv.com/*",
+        "*://*.hbomax.com/*",
+        "*://*.max.com/*"
+      ],
+      "js": ["fullscreen-main.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.espn.com/*",
+        "*://*.foxone.com/*",
+        "*://*.fox.com/*",
+        "*://*.paramountplus.com/*",
+        "*://*.cbs.com/*",
+        "*://*.netflix.com/*",
+        "*://*.peacocktv.com/*",
+        "*://*.youtube.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hulu.com/*",
+        "*://*.tubitv.com/*",
+        "*://*.hbomax.com/*",
+        "*://*.max.com/*"
+      ],
+      "js": ["fullscreen-bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ArenaOwl</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>ArenaOwl</h1>
+
+  <label>Monitor
+    <select id="monitor"></select>
+  </label>
+
+  <label>Screens
+    <select id="count">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option selected>4</option>
+    </select>
+  </label>
+
+  <div id="slots"></div>
+
+  <div id="preview"></div>
+
+  <div class="buttons">
+    <button id="launch" class="primary">Launch</button>
+    <button id="closeAll" class="danger">Close all</button>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
